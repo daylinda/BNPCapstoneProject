@@ -1,0 +1,5 @@
+package com.capstone.demo.dao;
+
+public interface SavingsTransfersDAO {
+
+}

@@ -1,6 +1,5 @@
 package com.capstone.demo.service.impl;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +15,10 @@ public class SavingsAccountServiceImpl implements SavingsAccountService{
 	
 	@Autowired
 	private SavingsAccountDAO dao;
-	
-	private static long count = 10000000;
 
 	@Override
 	public SavingsAccount createSavingsAccount(SavingsAccount savingsAccount) {
 		
-		savingsAccount.setAccountNumber(accountGenerator());
-		savingsAccount.setAccountBalance(new BigDecimal(0.0));
 		return dao.save(savingsAccount);
 	}
 
@@ -31,11 +26,6 @@ public class SavingsAccountServiceImpl implements SavingsAccountService{
 	public List<SavingsAccount> getAllSavingsAccounts() {
 		
 		return dao.findAll();
-	}
-	
-	
-	private long accountGenerator() {
-		return ++count;
 	}
 	
 	
