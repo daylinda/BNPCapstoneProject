@@ -7,5 +7,7 @@ import com.capstone.demo.model.SavingsAccount;
 
 @Repository
 public interface SavingsAccountDAO extends JpaRepository<SavingsAccount, Integer>{
+	
+	public SavingsAccount findByAccountNumber(long accountNumber);
 
 }

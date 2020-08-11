@@ -1,7 +1,7 @@
 package com.capstone.demo.model;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,10 +15,12 @@ public class SavingsTransfers {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int savingsTransfers_Id;
-	private int receiverAccountNumber;
-	private BigDecimal transferAmount;
+	private int savingsTransfersId;
 	private Date date;
+	private String recipient;
+	private long recipientAccountNumber;
+	private Double transferAmount;
+	private String status;
 	
 	@ManyToOne
 	@JoinColumn(name = "savings_Account_Id")
@@ -28,27 +30,51 @@ public class SavingsTransfers {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getSavingsTransfers_Id() {
-		return savingsTransfers_Id;
+	public SavingsTransfers(Date date, String recipient, long recipientAccountNumber, Double transferAmount,
+			String status, SavingsAccount savingsAccount) {
+		super();
+		this.date = date;
+		this.recipient = recipient;
+		this.recipientAccountNumber = recipientAccountNumber;
+		this.transferAmount = transferAmount;
+		this.status = status;
+		this.savingsAccount = savingsAccount;
 	}
 
-	public void setSavingsTransfers_Id(int savingsTransfers_Id) {
-		this.savingsTransfers_Id = savingsTransfers_Id;
+
+
+
+	public String getRecipient() {
+		return recipient;
 	}
 
-	public int getReceiverAccountNumber() {
-		return receiverAccountNumber;
+	public void setRecipient(String recipient) {
+		this.recipient = recipient;
 	}
 
-	public void setReceiverAccountNumber(int receiverAccountNumber) {
-		this.receiverAccountNumber = receiverAccountNumber;
+	
+
+	public int getSavingsTransfersId() {
+		return savingsTransfersId;
 	}
 
-	public BigDecimal getTransferAmount() {
+	public void setSavingsTransfersId(int savingsTransfersId) {
+		this.savingsTransfersId = savingsTransfersId;
+	}
+
+	public long getRecipientAccountNumber() {
+		return recipientAccountNumber;
+	}
+
+	public void setRecipientAccountNumber(long receiverAccountNumber) {
+		this.recipientAccountNumber = receiverAccountNumber;
+	}
+
+	public Double getTransferAmount() {
 		return transferAmount;
 	}
 
-	public void setTransferAmount(BigDecimal transferAmount) {
+	public void setTransferAmount(Double transferAmount) {
 		this.transferAmount = transferAmount;
 	}
 

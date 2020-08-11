@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
-import com.capstone.demo.model.SavingsAccount;
+
 import com.capstone.demo.service.SavingsAccountService;
 
 @Controller
@@ -15,8 +15,8 @@ public class SavingsAccountController {
 	private SavingsAccountService savingsAccountService;
 	
 	@PostMapping("/savingsAccount")
-	public SavingsAccount createSavingsAccount(SavingsAccount savingsAccount) {
-		return savingsAccountService.createSavingsAccount(savingsAccount);
+	public void createSavingsAccount() {
+		savingsAccountService.createSavingsAccount();
 	}
 	
 

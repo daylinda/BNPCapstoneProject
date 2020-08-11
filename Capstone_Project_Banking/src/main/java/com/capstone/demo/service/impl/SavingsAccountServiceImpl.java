@@ -20,11 +20,12 @@ public class SavingsAccountServiceImpl implements SavingsAccountService{
 	private static long count = 10000000;
 
 	@Override
-	public SavingsAccount createSavingsAccount(SavingsAccount savingsAccount) {
+	public void createSavingsAccount() {
 		
+		SavingsAccount savingsAccount = new SavingsAccount();
 		savingsAccount.setAccountNumber(accountGenerator());
 		savingsAccount.setAccountBalance(new BigDecimal(0.0));
-		return dao.save(savingsAccount);
+		dao.save(savingsAccount);
 	}
 
 	@Override
@@ -36,6 +37,12 @@ public class SavingsAccountServiceImpl implements SavingsAccountService{
 	
 	private long accountGenerator() {
 		return ++count;
+	}
+
+	@Override
+	public SavingsAccount findByAccountNumber(long accountNumber) {
+		
+		return dao.findByAccountNumber(accountNumber);
 	}
 	
 	

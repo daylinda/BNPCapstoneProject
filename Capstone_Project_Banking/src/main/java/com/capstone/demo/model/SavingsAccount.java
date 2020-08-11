@@ -28,11 +28,11 @@ public class SavingsAccount {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getSid() {
+	public int getSavingsAccountId() {
 		return savingsAccountId;
 	}
 
-	public void setSid(int savingsAccountId) {
+	public void setSavingsAccountId(int savingsAccountId) {
 		this.savingsAccountId = savingsAccountId;
 	}
 
