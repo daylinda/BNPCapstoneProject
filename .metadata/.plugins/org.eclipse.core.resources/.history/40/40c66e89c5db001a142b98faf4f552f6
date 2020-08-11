@@ -1,0 +1,32 @@
+package com.capstone.demo.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capstone.demo.model.SavingsAccount;
+import com.capstone.demo.service.SavingsAccountService;
+
+@Service
+public class SavingsAccountServiceImpl implements SavingsAccountService{
+	
+	
+	@Autowired
+	private SavingsAccountDao dao;
+
+	@Override
+	public SavingsAccount createSavingsAccount(SavingsAccount savingsAccount) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<SavingsAccount> getAllSavingsAccounts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}
