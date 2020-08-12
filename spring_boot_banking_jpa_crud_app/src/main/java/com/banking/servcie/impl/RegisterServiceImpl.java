@@ -19,6 +19,7 @@ public class RegisterServiceImpl implements RegisterService {
 	
 	@Override
 	public User createUser(User user) {
+		user.setEnable(true);
 		return dao.save(user);
 	}
 
@@ -31,9 +32,31 @@ public class RegisterServiceImpl implements RegisterService {
 	public List<User> getAllUsers() {
 		return dao.findAll();
 	}
+
+	@Override
+	public void enableUser(int uId) {
+		User enable = dao.findById(uId).get();
+		enable.setEnable(true);
+		enable.setDisable(false);
+		dao.save(enable);
+	}
+
+	@Override
+	public void disableUser(int uId) {
+		User disable = dao.findById(uId).get();
+		disable.setDisable(true);
+		disable.setEnable(false);
+		
+		dao.save(disable);
+		
+	}
+
+	@Override
+	public void deleteUserById(int uId) {
+		dao.deleteById(uId);
+
+		
+	}
 		
 	}	
-	
-
-
 
