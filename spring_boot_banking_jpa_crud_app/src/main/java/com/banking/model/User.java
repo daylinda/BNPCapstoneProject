@@ -12,7 +12,7 @@ public class User {
 		
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private long uId;
+		private int uId;
 		private int savingsAccount;
 		private String firstName;
 		private String lastName;
@@ -26,19 +26,22 @@ public class User {
 		private String username;
 		private String password;
 		private boolean enable;
+		private boolean disable;
 		
-		
+//		@OneToOne
+//	    private SavingsAccount savingsAccount;
+//		
 		public User() {
 			// TODO Auto-generated constructor stub
 		}
 
 		
-		public long getuId() {
+		public int getuId() {
 			return uId;
 		}
 
 
-		public void setuId(long uId) {
+		public void setuId(int uId) {
 			this.uId = uId;
 		}
 
@@ -137,47 +140,48 @@ public class User {
 			this.password = password;
 		}
 		
-		
-
 		public int getSavingsAccount() {
 			return savingsAccount;
 		}
-
 
 		public void setSavingsAccount(int savingsAccount) {
 			this.savingsAccount = savingsAccount;
 		}
 
-
 		public boolean isEnable() {
 			return enable;
 		}
-
 
 		public void setEnable(boolean enable) {
 			this.enable = enable;
 		}
 
-
 		
+	
+		public boolean isDisable() {
+			return disable;
+		}
 
-		
 
+		public void setDisable(boolean disable) {
+			this.disable = disable;
+		}
 
 		@Override
 		public String toString() {
 			return "User [uId=" + uId + ", savingsAccount=" + savingsAccount + ", firstName=" + firstName
 					+ ", lastName=" + lastName + ", moileNumber=" + moileNumber + ", address=" + address + ", city="
 					+ city + ", state=" + state + ", country=" + country + ", gender=" + gender + ", emailId=" + emailId
-					+ ", username=" + username + ", password=" + password + ", enable=" + enable + "]";
+					+ ", username=" + username + ", password=" + password + ", enable=" + enable + ", disable="
+					+ disable + "]";
 		}
 
 
-		public User(int savingsAccount, String firstName, String lastName, long moileNumber, String address,
+		public User(int uId, String firstName, String lastName, long moileNumber, String address,
 				String city, String state, String country, String gender, String emailId, String username,
-				String password, boolean enable) {
+				String password) {
 			super();
-			this.savingsAccount = savingsAccount;
+			this.uId = uId;
 			this.firstName = firstName;
 			this.lastName = lastName;
 			this.moileNumber = moileNumber;
@@ -189,8 +193,11 @@ public class User {
 			this.emailId = emailId;
 			this.username = username;
 			this.password = password;
-			this.enable = enable;
+
 		}
+
+
+		
 
 
 		
