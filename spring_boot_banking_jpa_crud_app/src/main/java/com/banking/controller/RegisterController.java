@@ -36,6 +36,8 @@ public class RegisterController{
 		
 		return service.updateUser(user);
 	}
+	
+	
 
 		
 	@GetMapping("/users")
@@ -43,6 +45,32 @@ public class RegisterController{
 		
 		return service.getAllUsers();
 	}
+
+	@PutMapping("/admin/{uId}")
+	public void enableUser(@PathVariable int uId) {
+		
+		service.enableUser(uId);
+		
+				
+	}
+	
+	@PutMapping("/admin/disable/{uId}")
+	public void diableUser(@PathVariable int uId) {
+		
+		service.disableUser(uId);
+				
+	}
+	
+	@DeleteMapping("/admin/delete/{uId}")
+	public void deleteUserById(@PathVariable("uId")int uId) {
+
+		service.deleteUserById(uId);
+	}
+//	@Override
+//	public void disableUser(int uId) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 	
 	
