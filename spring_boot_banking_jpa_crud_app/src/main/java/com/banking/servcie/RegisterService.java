@@ -10,5 +10,8 @@ public interface RegisterService {
 	public User createUser(User user);
 	public User updateUser(User user);
 	public List<User> getAllUsers();
+	public void enableUser(int uId);
+	public void disableUser(int uId);
+	public void deleteUserById(int uId);
 
 }
