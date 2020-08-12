@@ -11,5 +11,6 @@ public interface SavingsAccountService {
 	public SavingsAccount createSavingsAccount();
 	public List<SavingsAccount> getAllSavingsAccounts();
 	public SavingsAccount findByAccountNumber(long accountNumber);
+	public String getSavingsAccountBalance(long accountNumber);
 
 }

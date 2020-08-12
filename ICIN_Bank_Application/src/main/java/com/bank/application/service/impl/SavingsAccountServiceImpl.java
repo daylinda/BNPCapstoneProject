@@ -47,6 +47,12 @@ public class SavingsAccountServiceImpl implements SavingsAccountService{
 		
 		return dao.findByAccountNumber(accountNumber);
 	}
+
+	@Override
+	public String getSavingsAccountBalance(long accountNumber) {
+		BigDecimal savingsAccountBalance = dao.findByAccountNumber(accountNumber).getAccountBalance();
+		return savingsAccountBalance.toString();
+	}
 	
 	
 
